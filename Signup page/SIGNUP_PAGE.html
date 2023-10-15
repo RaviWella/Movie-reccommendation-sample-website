@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Cinema Hive</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style> 
+      img {
+        width: 300px;
+        height: 350px;
+        padding: 0px;
+        background-color: coral;
+        box-shadow: 10px 10px 10px gray;
+      }
+      .cent{
+        align-items: center;
+      }
+    </style>
+    <script>
+      function recommendMovie() {
+        var category = document.getElementById("category").value;
+        var type = document.getElementById("type").value;
+        var mood = document.getElementById("mood").value;
+        
+        // Recommendations based on selected options
+        var recommendations = {
+          action_kollywood_happy: "<img src='chennai_ex.jpg'>",
+          comedy_kollywood_happy: "<img src='kollywood_comedy.jpg'>",
+          // Add more recommendations based on different combinations of options
+          // Example: comedy_hollywood_sad, science_fiction_bollywood_neutral, etc.
+        };
+        
+        // Generate recommendation key based on selected options
+        var recommendationKey = category + "_" + type + "_" + mood;
+        
+        // Get the recommendation based on the key
+        var recommendation = recommendations[recommendationKey];
+        
+        if (recommendation) {
+          // Display the recommendation
+          document.getElementById("recommendation").innerHTML = recommendation;
+        } else {
+          // No recommendation available for the selected options
+          document.getElementById("recommendation").innerHTML = "No movie recommendation available for the selected options.";
+        }
+      }
+    </script>
+    <script>
+      function validatefields() {
+        var name = document.getElementById("name").value;
+        var age = document.getElementById("age").value;
+        var gender = document.getElementById("gender").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm-password").value;
+        var occupation = document.getElementById("occupation").value;
+
+        if (name === "") {
+          alert("Name must be filled out");
+          return false;
+        } else if (age === "") {
+          alert("Age must be filled out");
+          return false;
+        } else if (gender === "") {
+          alert("Gender must be filled out");
+          return false;
+        } else if (email === "") {
+          alert("Email must be filled out");
+          return false;
+        } else if (password === "") {
+          alert("Password must be filled out");
+          return false;
+        } else if (confirmPassword === "") {
+          alert("Confirm Password must be filled out");
+          return false;
+        } else if (occupation === "") {
+          alert("Occupation must be filled out");
+          return false;
+        } 
+        else if(password != confirmPassword){
+          alert("You have entered two different passwords");
+          return false;
+        }
+        else {
+          alert("Dear " + name + ", Thank you for using CinemaHive. The recommended results will be shown shortly.");
+          return true;
+        }
+      }
+    </script>
+</head>
+<body>
+  <div class="main">
+    <!-- Sign up form -->
+    <section class="signup">
+      <div class="container">
+        <div class="signup-content">
+          <div class="signup-form">
+            <h2 class="form-title">Sign up</h2>
+            <form method="POST" class="register-form" id="register-form" action="" name="feedback" onsubmit="return validatefields()">
+              <div class="form-group">
+                <label for="name"><i class="zmdi zmdi-account material-icons-age"></i></label>
+                <input type="text" name="name" id="name" placeholder="Your Name" value=""/>
+              </div>
+              <div class="form-group">
+                <label for="age"><i class="zmdi zmdi-account material-icons-age"></i></label>
+                <input type="date" name="age" id="age" placeholder="Your Age" value=""/>
+              </div>
+              <div class="form-group">
+                <label for="gender"><i class="zmdi zmdi-account material-icons-age"></i></label>
+                <input type="text" name="gender" id="gender" placeholder="Your Gender (Male / Female)" value=""/>
+              </div>
+              <div class="form-group">
+                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                <input type="text" name="email" id="email" placeholder="Your Email"/>
+              </div>
+              <div class="form-group">
+                <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                <input type="password" name="password" id="password" placeholder="Password"/>
+              </div>
+              <div class="form-group">
+                <label for="confirm-password"><i class="zmdi zmdi-lock-outline"></i></label>
+                <input type="password" name="confirm-password" id="confirm-password" placeholder="Repeat your password"/>
+              </div>
+              <div class="form-group">
+                <label for="occupation"><i class="zmdi zmdi-account material-icons-Occupation"></i></label>
+                <input type="text" name="occupation" id="occupation" placeholder="Occupation"/>
+              </div>
+              <div class="form-group form-button">
+                <input type="submit" name="submit" id="signup" class="form-submit" value="Sign up"/>
+              </div>
+            </form>
+          </div>
+          <div class="signup-image">
+            <figure><img src="images/signing-image.jpg" alt="sign up image"></figure>
+            <a href="#" class="signup-image-link">I am already a member</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Sign in Form -->
+    <section class="sign-in">
+      <div class="container">
+        <div class="signin-content">
+          <div class="signin-image">
+            <figure><img src="images/smile.jpg" alt="sign in image"></figure>
+          </div>
+          <div class="signin-form">
+            <h2 class="form-title">Preferences</h2>
+            <form method="POST" class="register-form" id="login-form"> 
+              <div class="form-group">
+                <label for="category">Movie Category:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select id="category" name="category">
+                  <option value="action">Action</option>
+                  <option value="comedy">Comedy</option>
+                  <option value="science_fiction">Science Fiction</option>
+                  <option value="romantic">Romantic</option>
+                  <option value="horror">Horror</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="type">Movie Type:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select id="type" name="type">
+                  <option value="kollywood">Kollywood</option>
+                  <option value="bollywood">Bollywood</option>
+                  <option value="hollywood">Hollywood</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="mood">Your Mood:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select id="mood" name="mood">
+                  <option value="happy">Happy</option>
+                  <option value="neutral">Neutral</option>
+                  <option value="sad">Sad</option>
+                </select>
+              </div>
+              <div class="form-group form-button">
+                <input type="submit" id="signin" class="form-submit" value="Submit" onclick="recommendMovie()"/>
+                <input type="reset" id="signin" class="form-submit" value="Reset"/>
+              </div>
+            </form>
+            <div class="social-login">
+              <span class="social-label">Or login with</span>
+              <ul class="socials">
+                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <br>
+    <br>
+    <br>
+    <section class="sign-in">
+      <div class="cent">
+      <div class="container">
+        <div class="signin-content">
+          <a href="../Editor pages/Editor's page - Gawesh.html" target="_parent">EDITOR'S PAGE</a></p>
+          <div id="recommendation"></div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- JS -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

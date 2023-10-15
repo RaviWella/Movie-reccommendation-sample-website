@@ -1,0 +1,96 @@
+/* *{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+} */
+
+.abc{
+  font-family: 'Montserrat', sans-serif;
+  background-image: url(../images/meetings-bg.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center ;
+}
+
+
+
+.row{
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.col{
+  flex-basis: 50%;
+}
+
+.h1{
+  padding-left: 10px;
+  font-size: 100px;
+  color: white;
+}
+
+.home-description{
+  padding-left: 10px;
+}
+
+.para{
+  font-size: 11px;
+  line-height: 15px;
+  color: white;
+}
+
+
+
+.card-1, .card-2, .card-3, .card-4{
+  width: 200px;
+  height: 230px;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 30px 75px;
+  background-image: url(Images/pic-1.png);
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.5s ;
+}
+
+.card-1{
+  background-image: url(../images/backg.jpg);
+  transition: transform .2s; /* Animation */
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+
+.card-1:hover{
+  transform: scale(1.5);
+}
+
+
+/* h2{
+  color: white;
+  text-shadow: 0 0 2px #999;
+  text-align: center;
+
+} */
+
+.card p{
+  text-shadow: 0 0 15px #000;
+  font-size: 8px;
+}
+
+.zoom {
+
+}
+
+.zoom:hover {
+  
+}

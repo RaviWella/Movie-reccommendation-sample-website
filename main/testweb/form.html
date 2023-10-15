@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyAnything | Home</title>
+   
+    <!--font awesome icons-->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        
+</head>
+<body class="text">
+
+    <div class="ending bottom-margin">
+        <div class="form">
+            <h1 class="text">Feedback Form</h1>
+            <form method="POST" action="" name="feedback" onsubmit="return validateForm()">
+                <div class="row">
+                  <div class="col-25">
+                    <label for="fname">Name</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" name="name" class="form-control" value="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="lname">Email</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" name="email" class="form-control" value="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="subject">Message</label>
+                  </div>
+                  <div class="col-75">
+                    <textarea name="message" placeholder="Discribe your requirement" class="form-control" style="height:200px"></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="subject">Message</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="radio" id="1" name="rate" value="Very Good">
+                        <label for="1" >Very Good</label><br>
+                        <input type="radio" id="2" name="rate" value="Good">
+                        <label for="2">Good</label><br>
+                        <input type="radio" id="3" name="rate" value="Satisfiable">
+                        <label for="3">Satisfiable</label><br>
+                        <input type="radio" id="4" name="rate" value="Bad">
+                        <label for="4">Bad</label><br>
+                        <input type="radio" id="5" name="rate" value="Very Bad">
+                        <label for="5">Very Bad</label><br>
+                    </div>
+                </div>
+                <div class="row">
+                  <input type="reset" name="reset" value="Reset">
+                  <input type="submit" name="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+        
+
+    <script src="./js/form.js"></script>
+
+
+</body>
+</html>

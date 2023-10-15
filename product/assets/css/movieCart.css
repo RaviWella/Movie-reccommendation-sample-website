@@ -1,0 +1,187 @@
+body{
+    font-family: system-ui;
+    font-size: 16px;
+}
+.containerCart{
+    width: 1000px;
+    margin: auto;
+    transition: 1s;
+
+}
+#decreaseFontButton{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    color: gold;
+    background-color: darkred;
+}
+#increaseFontButton{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 10px;
+    color: gold;
+    background-color: darkred;
+}
+
+.head{
+    display:grid;
+    grid-template-columns: 1fr 50px;
+    margin-top: 100px;
+    
+}
+
+.head h1{
+    color: orange;
+    font-weight: 600;
+    
+}
+
+.head .iconcart{
+    position: relative;
+    text-align: right;
+}
+
+.head .iconcart img{
+    width: 50px;
+    border-radius: 10px;
+}
+
+span.quantity{
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position:absolute;
+    top: -2px;
+    left: 65%;
+    padding: 3px 10px;
+}
+
+.list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 50px; 
+    
+}
+
+.card{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 500px;
+    background-color: darkslategrey;
+    height:95vh;
+    transition: 0.5s;
+}
+
+
+.card h1{
+    color: orange;
+    font-weight: 200;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;   
+}
+
+.card .checkOut{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.card .checkOut div{
+    background-color: steelblue;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.card .checkOut div:nth-child(2){
+    background-color: slategray;
+    color: orange;
+}
+
+.list .item{
+    text-align: center;
+    background-color: lightsteelblue;
+    padding: 20px;
+    box-shadow: 0 50px 50px #757676;
+    letter-spacing: 1px;
+}
+.list .item:hover{
+    transform: translateY(-2px);
+    box-shadow:  .5rem .5rem 2rem orange;
+    
+}
+.list .item img{
+    width: 95%;
+    height: 80%;
+}
+.list .item .title{
+    font-weight: 800;
+}
+.list .item .price{
+    margin: 10px;
+    font-weight: bolder;
+
+}
+.list .item button{
+    background-color:darkcyan;
+    color: whitesmoke;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+
+.listCard li{
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    color: white;
+    row-gap: 10px;
+    margin-bottom: 20px;
+}
+.listCard li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listCard li img{
+    width: 90%;
+}
+.listCard li button{
+    width: auto;
+    background-color: #fff5;
+    border: none;
+}
+.listCard .count{
+    margin: 0 10px;
+}
+
+@media screen and (min-width: 700px){
+    .card{
+        margin: 2rem;
+        transition: transform .5s;
+    }
+    .containerCart{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
